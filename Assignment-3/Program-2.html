@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script>
+      function MarriageEligibility() {
+        while (true) {
+        try {
+          var age = parseInt(prompt("Enter your age:"));
+          if (isNaN(age)) {
+            throw new Error("Invalid input. Please enter a number.");
+          }
+          if (age < 21) {
+            throw new Error("Have some patience");
+          }
+          alert("Eligible");
+          document.getElementById("age").innerHTML = `Your Age is = ` + (Number(age));
+          break;
+          } catch (error) {
+          alert(error.message);
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="age"></div>
+    <button onclick="MarriageEligibility()">marriage Eligibility</button>
+  </body>
+</html>
+

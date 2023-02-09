@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script>
+      function calculateSum() {
+        while (true) {
+          var number1 = prompt("Enter first number--> ");
+          if (isNaN(number1)) {
+            alert("Please use only numbers");
+            continue;
+          }
+          var number2 = prompt("Enter second number--> ");
+          if (isNaN(number2)) {
+            alert("Please use only numbers");
+            continue;
+          }
+          document.getElementById("result").innerHTML = `The sum of ${number1} and ${number2} is = ` + (Number(number1) + Number(number2));
+          break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="result"></div>
+    <button onclick="calculateSum()">Calculate Sum of two Numbers</button>
+  </body>
+</html>
