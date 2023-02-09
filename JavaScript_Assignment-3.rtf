@@ -1,0 +1,172 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs22\lang9 Program 1-  Write a program to accept 2 numbers and print the sum on HTML\par
+Note 1- The program will not exit until the final result is displayed.\par
+Note 2- If any other value is passed apart from the number then an alert should be displayed with \ldblquote Please use the only number\rdblquote\par
+Hint- use isNaN() function to check number value and use while loop to continue iteration. You can use the prompt and alert function of JavaScript.\par
+\b0 <html>\par
+  <head>\par
+    <script>\par
+      function calculateSum() \{\par
+        while (true) \{\par
+          var number1 = prompt("Enter first number--> ");\par
+          if (isNaN(number1)) \{\par
+            alert("Please use only numbers");\par
+            continue;\par
+          \}\par
+          var number2 = prompt("Enter second number--> ");\par
+          if (isNaN(number2)) \{\par
+            alert("Please use only numbers");\par
+            continue;\par
+          \}\par
+          document.getElementById("result").innerHTML = `The sum of $\{number1\} and $\{number2\} is = ` + (Number(number1) + Number(number2));\par
+          break;\par
+        \}\par
+      \}\par
+    </script>\par
+  </head>\par
+  <body>\par
+    <div id="result"></div>\par
+    <button onclick="calculateSum()">Calculate Sum of two Numbers</button>\par
+  </body>\par
+</html>\par
+===========================================================================\par
+\b Program 3- Display Course Information\par
+Create a class called Courses\par
+Add below property\par
+\tab CourseName\par
+\tab Price\par
+\tab Validity\par
+\tab TrainerName\par
+\tab PhoneNumber\par
+Create method showDetails which will return string in below format\par
+\ldblquote Thank you for showing interest in Course Name - Current Price is  \ldblquote Price\rdblquote  and validity of course is till  \ldblquote Validity\rdblquote  If you have any query then reach out to \ldblquote TrainerName\rdblquote  mobile - \ldblquote PhoneNumber\rdblquote\rdblquote\par
+Above message will replace with actual values \par
+Create 3 courses object and call showDetails method.\par
+\b0\par
+class Courses\{\par
+    constructor(CourseName,Price,Validity,TrainerName,PhoneNumber)\{\par
+        this.CourseName=CourseName\par
+        this.Price=Price\par
+        this.Validity=Validity\par
+        this.TrainerName=TrainerName\par
+        this.PhoneNumber=PhoneNumber\par
+    \}\par
+    showDetails(CourseName,Price,Validity,TrainerName,PhoneNumber)\{\par
+        console.log(`Thank you for showing interest in $\{CourseName\} - Current Price is  $\{Price\} and validity of course is till $\{Validity\} If you have any query then reach out to $\{TrainerName\} mobile - $\{PhoneNumber\}`)\par
+    \}\par
+\}\par
+let javascript=new Courses()\par
+javascript.showDetails("JavaScript","200","31-Dec-2024","Chinna","9090909090")\par
+console.log("----------------------------------------------------------------------------------------------------")\par
+let Cypress=new Courses()\par
+Cypress.showDetails("Cypress","300","31-Dec-2025","Mukesh","9909090909")\par
+console.log("----------------------------------------------------------------------------------------------------")\par
+let ds=new Courses()\par
+ds.showDetails("DS","500","31-Dec-2026","Krish","9090909099")\par
+\par
+===============================================================================\par
+\b Program 4- Write the same program with getter method(above program using \i getter\i0  method)\b0\par
+class Course \{\par
+    constructor(courseName, price, validity, trainerName, phoneNumber) \{\par
+        this._courseName = courseName;\par
+        this._price = price;\par
+        this._validity = validity;\par
+        this._trainerName = trainerName;\par
+        this._phoneNumber = phoneNumber;\par
+    \}\par
+    get courseName() \{\par
+        return this._courseName;\par
+    \}\par
+    get price() \{\par
+        return this._price;\par
+    \}\par
+    get validity() \{\par
+        return this._validity;\par
+    \}\par
+    get trainerName() \{\par
+        return this._trainerName;\par
+    \}\par
+    get phoneNumber() \{\par
+        return this._phoneNumber;\par
+    \}\par
+    showDetails() \{\par
+        return `Thank you for showing interest in $\{this.courseName\} - Current Price is $\{this.price\} and validity of course is till $\{this.validity\}. If you have any query then reach out to $\{this.trainerName\} mobile - $\{this.phoneNumber\}`;\par
+    \}\par
+\}\par
+let javascript = new Course("JavaScript","200","31-Dec-2024","Chinna","9090909090");\par
+let Cypress = new Course("Cypress","300","31-Dec-2025","Mukesh","9909090909");\par
+let ds = new Course("DS","500","31-Dec-2026","Krish","9090909099");\par
+console.log(javascript.showDetails());\par
+console.log("-----------------------------------------------------------------------------------------------")\par
+console.log(Cypress.showDetails());\par
+console.log("-----------------------------------------------------------------------------------------------")\par
+console.log(ds.showDetails());\par
+=====================================================================\par
+\b Program 5- Write the program which will set new course information\par
+Write the same program as discussed in program 3 but this program will have setter method which can set course details.\par
+Now use getter and setter method to get and set the course information.\par
+\b0 class Course \{\par
+    constructor(courseName, price, validity, trainerName, phoneNumber) \{\par
+        this._courseName = courseName;\par
+        this._price = price;\par
+        this._validity = validity;\par
+        this._trainerName = trainerName;\par
+        this._phoneNumber = phoneNumber;\par
+    \}\par
+    get courseName() \{\par
+        return this._courseName;\par
+    \}\par
+    set courseName(value) \{\par
+        this._courseName = value;\par
+    \}\par
+    get price() \{\par
+        return this._price;\par
+    \}\par
+    set price(value) \{\par
+        this._price = value;\par
+    \}\par
+    get validity() \{\par
+        return this._validity;\par
+    \}\par
+    set validity(value) \{\par
+        this._validity = value;\par
+    \}\par
+    get trainerName() \{\par
+        return this._trainerName;\par
+    \}\par
+    set trainerName(value) \{\par
+        this._trainerName = value;\par
+    \}\par
+    get phoneNumber() \{\par
+        return this._phoneNumber;\par
+    \}\par
+    set phoneNumber(value) \{\par
+        this._phoneNumber = value;\par
+    \}\par
+    showDetails() \{\par
+        return `Thank you for showing interest in $\{this.courseName\} - Current Price is $\{this.price\} and validity of course is till $\{this.validity\}. If you have any query then reach out to $\{this.trainerName\} mobile - $\{this.phoneNumber\}`;\par
+    \}\par
+\}\par
+let NameOfTheCourse = new Course("JavaScript","200","31-Dec-2024","Chinna","9090909090");\par
+console.log(NameOfTheCourse.showDetails());\par
+NameOfTheCourse.courseName = "Advanced JavaScript";\par
+NameOfTheCourse.price = "400";\par
+NameOfTheCourse.validity = "31st December 2025";\par
+NameOfTheCourse.trainerName = "Mukesh";\par
+NameOfTheCourse.phoneNumber = "1232343456";\par
+console.log("-------------------------------------------------");\par
+console.log(NameOfTheCourse.showDetails());\par
+=================================================================\par
+\b Program 6 - Export multiple objects\par
+Use program 3 code and create 3 objects\par
+Export all 3 objects.\par
+Create new js file , import above 3 objects.\par
+Print second course details.\par
+\b0\par
+import \{ javascript,Cypress,ds\} from "./Program-4.js";\par
+console.log(javascript)\par
+console.log(Cypress)\par
+console.log(ds)\par
+}
+ 
